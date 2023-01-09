@@ -1,4 +1,4 @@
-﻿namespace NZWalksAPI.Models.Domain
+﻿namespace NZWalksAPI.Models.DTO
 {
     public class Walk
     {
@@ -11,6 +11,6 @@
         //Navigation
         public Region Region { get; set; }
         public WalkDifficulty WalkDifficulty { get; set; }
-     
+
     }
 }

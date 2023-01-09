@@ -25,7 +25,7 @@ namespace NZWalksAPI.Controllers
         public async Task<IActionResult> GetAllRegionsAsync()
         {
             //var regions = new List<Region>()
-            //{
+            //{ 
             //    new  Region
             //    {
             //      Id = Guid.NewGuid(),
@@ -73,7 +73,6 @@ namespace NZWalksAPI.Controllers
 
         }
 
-
         [HttpGet]
         [Route("{id:guid}")]
         [ActionName("GetRegionAsync")]
@@ -87,12 +86,13 @@ namespace NZWalksAPI.Controllers
             }
             return Ok(regionsDTO);
         }
+
         [HttpPost]
         public async Task<IActionResult> AddRegionAsync(Models.DTO.AddRegionRequest addRegionRequest)
         {
             //Request(DTO) to dowain model
 
-            var region = new Models.Domain.Region()
+            var region = new Models.Domain.Region
             {
                 Code = addRegionRequest.Code,
                 Name = addRegionRequest.Name,
@@ -107,8 +107,9 @@ namespace NZWalksAPI.Controllers
 
             //Convert back to DTO
 
-            var regionDTO = new Models.DTO.Region()
+            var regionDTO = new Models.DTO.Region
             {
+                Id= region.Id,
                 Code = region.Code,
                 Name = region.Name,
                 Lat = region.Lat,
